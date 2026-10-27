@@ -12,7 +12,7 @@ Commande exécutée avec JDK 17 / Gradle 8.2.1 :
 
 La compilation initiale a nécessité de remplacer le composant rtl-viewpager JitPack indisponible par ses sources originales épinglées. Un cache KSP 1.9.10 devenu incohérent après le renommage des packages a été éliminé par `clean` et la désactivation de son mode incrémental pour cette vérification. Le build propre réussit. Des avertissements de dépréciation et de chaînes de traduction viennent encore de la base amont.
 
-SHA-256 de l’APK livré : `65bfce668ec083cc33f0711a31d375f4e41cbf33b4fd3614fab0ae19a9783fde`.
+SHA-256 de l’APK livré : `d98488e5e9be5cb5a45985ba59853a40ff9cde42db6e187c9fdee7740c2afae3`.
 
 Les contrôles Android réels ci-dessous ne sont pas assimilés aux simulations JVM.
 

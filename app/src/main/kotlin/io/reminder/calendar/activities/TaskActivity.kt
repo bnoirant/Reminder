@@ -58,7 +58,9 @@ class TaskActivity : SimpleActivity() {
                 io.reminder.calendar.reminders.ReminderEngine.get(this@TaskActivity).dismiss(key)
             }
         }
-        recreate()
+        // Start with fresh state: recreating would restore the previous event's saved form.
+        finish()
+        startActivity(newIntent)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
