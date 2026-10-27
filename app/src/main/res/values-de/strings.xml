@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Schlichter Kalender</string>
-    <string name="app_launcher_name">Kalender</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Ansicht ändern</string>
     <string name="daily_view">Tagesansicht</string>
     <string name="weekly_view">Wochenansicht</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Zu heute springen</string>
     <string name="go_to_date">Zu Datum springen</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Monatskalender</string>
-    <string name="widget_list">Terminliste</string>
-    <string name="widget_todays_date">Kalender, heutiges Datum</string>
+    <string name="widget_monthly">Reminder — Monatskalender</string>
+    <string name="widget_list">Reminder — Terminliste</string>
+    <string name="widget_todays_date">Reminder — Kalender, heutiges Datum</string>
     <!-- Event -->
     <string name="event">Termin</string>
     <string name="edit_event">Termin bearbeiten</string>

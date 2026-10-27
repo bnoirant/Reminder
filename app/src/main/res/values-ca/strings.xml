@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Calendar</string>
-    <string name="app_launcher_name">Calendari</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Canvia la vista</string>
     <string name="daily_view">Vista diària</string>
     <string name="weekly_view">Vista setmanal</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Ves a avui</string>
     <string name="go_to_date">Ves a la data</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Calendari mensual</string>
-    <string name="widget_list">Llista d\'esdeveniments del calendari</string>
-    <string name="widget_todays_date">Calendari de la data d\'avui</string>
+    <string name="widget_monthly">Reminder — Calendari mensual</string>
+    <string name="widget_list">Reminder — Llista d\'esdeveniments del calendari</string>
+    <string name="widget_todays_date">Reminder — Calendari de la data d\'avui</string>
     <!-- Event -->
     <string name="event">Esdeveniment</string>
     <string name="edit_event">Edita l\'esdeveniment</string>

@@ -17,13 +17,13 @@ gradlePlugins-agp = "8.1.1"
 #build
 app-build-compileSDKVersion = "34"
 app-build-targetSDK = "34"
-app-build-minimumSDK = "23"
+app-build-minimumSDK = "26"
 app-build-javaVersion = "VERSION_17"
 app-build-kotlinJVMTarget = "17"
 #versioning
-app-version-appId = "com.simplemobiletools.calendar.pro"
-app-version-versionCode = "240"
-app-version-versionName = "6.23.1"
+app-version-appId = "io.reminder.calendar"
+app-version-versionCode = "241"
+app-version-versionName = "1.0.0"
 [libraries]
 #Android X
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }

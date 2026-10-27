@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Απλό Ημερολόγιο</string>
-    <string name="app_launcher_name">Ημερολόγιο</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Αλλαγή προβολής</string>
     <string name="daily_view">Ημερήσια προβολή</string>
     <string name="weekly_view">Εβδομαδιαία προβολή</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Μετάβαση στο σήμερα</string>
     <string name="go_to_date">Μετάβαση σε ημερ/νία</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Μηνιαίο ημερολόγιο</string>
-    <string name="widget_list">Λίστα εκδηλώσεων ημερολογίου</string>
-    <string name="widget_todays_date">Σημερινό ημερολόγιο</string>
+    <string name="widget_monthly">Reminder — Μηνιαίο ημερολόγιο</string>
+    <string name="widget_list">Reminder — Λίστα εκδηλώσεων ημερολογίου</string>
+    <string name="widget_todays_date">Reminder — Σημερινό ημερολόγιο</string>
     <!-- Event -->
     <string name="event">Εκδηλώσεις</string>
     <string name="edit_event">Επεξεργασία εκδηλώσεων</string>

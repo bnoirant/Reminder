@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Calendar</string>
-    <string name="app_launcher_name">Egutegia</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Aldatu ikuspegia</string>
     <string name="daily_view">Eguneko ikuspegia</string>
     <string name="weekly_view">Asteko ikuspegia</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Joan gaurko egunera</string>
     <string name="go_to_date">Joan data zehatz batera</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Egutegia (hilabetea)</string>
-    <string name="widget_list">Egutegia (gertaera-zerrenda)</string>
-    <string name="widget_todays_date">Egutegia (gaurko eguna)</string>
+    <string name="widget_monthly">Reminder — Egutegia (hilabetea)</string>
+    <string name="widget_list">Reminder — Egutegia (gertaera-zerrenda)</string>
+    <string name="widget_todays_date">Reminder — Egutegia (gaurko eguna)</string>
     <!-- Event -->
     <string name="event">Gertaera</string>
     <string name="edit_event">Editatu gertaera</string>

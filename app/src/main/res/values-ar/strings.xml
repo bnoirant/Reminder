@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">التقويم البسيط</string>
-    <string name="app_launcher_name">التقويم</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">تعديل العرض</string>
     <string name="daily_view">عرض يومي</string>
     <string name="weekly_view">عرض أسبوعي</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">اذهب الى اليوم</string>
     <string name="go_to_date">اذهب الى تاريخ</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">تقويم شهري</string>
-    <string name="widget_list">لائحة أحداث التقويم</string>
-    <string name="widget_todays_date">تقويم تاريخ اليوم</string>
+    <string name="widget_monthly">Reminder — تقويم شهري</string>
+    <string name="widget_list">Reminder — لائحة أحداث التقويم</string>
+    <string name="widget_todays_date">Reminder — تقويم تاريخ اليوم</string>
     <!-- Event -->
     <string name="event">حدث</string>
     <string name="edit_event">تعديل حدث</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">シンプル カレンダー</string>
-    <string name="app_launcher_name">カレンダー</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">ビューの変更</string>
     <string name="daily_view">日</string>
     <string name="weekly_view">週</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">今日へ移動</string>
     <string name="go_to_date">日付に移動</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">カレンダー 月</string>
-    <string name="widget_list">カレンダー 予定 リスト</string>
-    <string name="widget_todays_date">カレンダー 今日の日付</string>
+    <string name="widget_monthly">Reminder — カレンダー 月</string>
+    <string name="widget_list">Reminder — カレンダー 予定 リスト</string>
+    <string name="widget_todays_date">Reminder — カレンダー 今日の日付</string>
     <!-- Event -->
     <string name="event">予定</string>
     <string name="edit_event">予定を編集</string>

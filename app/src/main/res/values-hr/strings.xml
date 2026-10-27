@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Jednostavan kalendar</string>
-    <string name="app_launcher_name">Kalendar</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Promijeni prikaz</string>
     <string name="daily_view">Dnevni prikaz</string>
     <string name="weekly_view">Tjedni prikaz</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Idi na danas</string>
     <string name="go_to_date">Idi na datum</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Mjesečni kalendar</string>
-    <string name="widget_list">Popis događaja kalendara</string>
-    <string name="widget_todays_date">Današnji datum kalendara</string>
+    <string name="widget_monthly">Reminder — Mjesečni kalendar</string>
+    <string name="widget_list">Reminder — Popis događaja kalendara</string>
+    <string name="widget_todays_date">Reminder — Današnji datum kalendara</string>
     <!-- Event -->
     <string name="event">Događaj</string>
     <string name="edit_event">Uredi događaj</string>

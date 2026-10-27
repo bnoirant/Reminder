@@ -336,11 +336,22 @@
                 android:padding="@dimen/medium_margin"
                 android:src="@drawable/ic_bell_vector" />
 
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_notification_visibility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/event_reminder_3"
+                android:layout_alignStart="@+id/event_reminder_1"
+                android:background="?attr/selectableItemBackground"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:textSize="@dimen/day_text_size" />
+
             <ImageView
                 android:id="@+id/event_reminder_divider"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divider_height"
-                android:layout_below="@+id/event_reminder_3"
+                android:layout_below="@+id/event_notification_visibility"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_marginBottom="@dimen/medium_margin"
                 android:background="@color/divider_grey"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Calendar</string>
-    <string name="app_launcher_name">Каляндар</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Змяніць выгляд</string>
     <string name="daily_view">Дзень</string>
     <string name="weekly_view">Тыдзень</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Сёння</string>
     <string name="go_to_date">Перайсці да спаткання</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Каляндар на месяц</string>
-    <string name="widget_list">Каляндар падзей</string>
-    <string name="widget_todays_date">Каляндар на сёння</string>
+    <string name="widget_monthly">Reminder — Каляндар на месяц</string>
+    <string name="widget_list">Reminder — Каляндар падзей</string>
+    <string name="widget_todays_date">Reminder — Каляндар на сёння</string>
     <!-- Event -->
     <string name="event">Падзея</string>
     <string name="edit_event">Рэдагаваць падзею</string>

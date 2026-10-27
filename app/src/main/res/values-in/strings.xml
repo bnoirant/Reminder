@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Calendar</string>
-    <string name="app_launcher_name">Kalender</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Ubah tampilan</string>
     <string name="daily_view">Tampilan hari</string>
     <string name="weekly_view">Tampilan minggu</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Buka hari ini</string>
     <string name="go_to_date">Buka tanggal</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Bulan</string>
-    <string name="widget_list">Daftar acara</string>
-    <string name="widget_todays_date">Tanggal kalender hari ini</string>
+    <string name="widget_monthly">Reminder — Bulan</string>
+    <string name="widget_list">Reminder — Daftar acara</string>
+    <string name="widget_todays_date">Reminder — Tanggal kalender hari ini</string>
     <!-- Event -->
     <string name="event">Acara</string>
     <string name="edit_event">Sunting Acara</string>

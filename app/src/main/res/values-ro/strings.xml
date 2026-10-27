@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Calendar Simplu</string>
-    <string name="app_launcher_name">Calendar</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Schimbă vizualizarea</string>
     <string name="daily_view">Vizualizare zilnică</string>
     <string name="weekly_view">Vizualizare săptămânală</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Sari la ziua de azi</string>
     <string name="go_to_date">Sari la o dată</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Calendar lunar</string>
-    <string name="widget_list">Calendar listă evenimente</string>
-    <string name="widget_todays_date">Calendar data de azi</string>
+    <string name="widget_monthly">Reminder — Calendar lunar</string>
+    <string name="widget_list">Reminder — Calendar listă evenimente</string>
+    <string name="widget_todays_date">Reminder — Calendar data de azi</string>
     <!-- Event -->
     <string name="event">Eveniment</string>
     <string name="edit_event">Modifică evenimentul</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Простий Календар</string>
-    <string name="app_launcher_name">Календар</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Змінити режим перегляду</string>
     <string name="daily_view">День</string>
     <string name="weekly_view">Тиждень</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Події сьогодні</string>
     <string name="go_to_date">Перегляд за датою</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Календар на місяць</string>
-    <string name="widget_list">Календар списку подій</string>
-    <string name="widget_todays_date">Календар подій на сьогодні</string>
+    <string name="widget_monthly">Reminder — Календар на місяць</string>
+    <string name="widget_list">Reminder — Календар списку подій</string>
+    <string name="widget_todays_date">Reminder — Календар подій на сьогодні</string>
     <!-- Event -->
     <string name="event">Подія</string>
     <string name="edit_event">Редагувати подію</string>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_visibility">Durée de visibilité des notifications</string>
+    <string name="visibility_global">Utiliser le réglage global</string>
+    <string name="visibility_hours">%1$s h</string>
+    <string name="visibility_custom">Durée personnalisée</string>
+    <string name="visibility_minutes">Durée en minutes (décimales acceptées)</string>
+    <string name="visibility_positive">Saisissez une durée strictement positive (au moins 1 ms).</string>
+    <string name="snooze_exceeds_expiry">Report refusé : il doit se terminer avant l’échéance initiale.</string>
+    <string name="precise_alarms">Rappels précis</string>
+    <string name="precise_alarms_granted">Autorisés</string>
+    <string name="precise_alarms_denied">Non autorisés — rappels potentiellement retardés ; toucher pour autoriser</string>
+</resources>

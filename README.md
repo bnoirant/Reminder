@@ -1,67 +1,38 @@
-# Simple Calendar
-<img alt="Logo" src="graphics/icon.png" width="120" />
+# Reminder
 
-Simple Calendar 2023 is a highly customizable, offline monthly calendar app for Android. Have an agenda planner in your pocket, designed to do exactly what a personal tiny schedule planner should do in 2023. No complicated features, unnecessary permissions, or ads!  
-***Supports syncing events via Google Calendar
+Calendrier Android dérivé de **Simple Calendar**, avec des notifications à échéance fixe.
+Nom : **Reminder** · applicationId/namespace : **`io.reminder.calendar`** · Android **8.0+** (API 26).
+L’APK de test s’installe à côté de Simple Calendar. Les variantes core, fdroid et prepaid partagent volontairement la même identité Reminder.
 
-Download now!
+Les données d’une installation Simple Calendar peuvent être transférées par export/import ICS ; les deux applications ont des espaces de données Android distincts. La migration du schéma interne Reminder conserve les événements existants.
 
-Daily Digital Schedule App: Take Control of Your Time
-Whether you are looking for a work calendar for business, a day planner, an appointment scheduler, or organization and scheduling of single and recurring events like birthdays, anniversary, appointment reminder, or anything else, Simple Calendar 2023 makes it easy to stay organized. The calendar widget has an incredible variety of customization options: customize event reminders, notification appearance, tiny calendar reminders widget, and overall appearance.
+Le calendrier existant est conservé : événements, tâches, récurrences et exceptions, rappels, widgets, synchronisation CalDAV, import/export ICS et sauvegardes.
 
-Schedule Planner: Plan Your Day
-Appointment scheduler, monthly planner, and family organizer in one! Check your upcoming agenda, schedule business meetings, and events & book appointments easily. Reminders will keep you on time and informed on your daily schedule app. This 2023 calendar widget is remarkably easy to use. You can even view everything as a simple list of events rather than in a monthly view, so you know exactly what’s coming up in your life and how to organize and plan your agenda. 
+## Notifications
 
-Simple Calendar 2023 Features
+Dans Paramètres → Durée de visibilité des notifications : **4 heures** initialement, choix **1/2/4/8 h**, ou durée personnalisée positive en minutes décimales (précision milliseconde). Chaque événement peut choisir sa durée ou hériter du réglage global.
 
-✔️ The Best User Experience  
-➕ No ads or annoying popups, truly great user experience!  
-➕ No internet access is needed, giving you more privacy, security, and stability
+L’échéance est toujours **heure prévue du rappel + durée**. Un rappel de 9 h valable 3 h expire à 12 h, même reçu à 11 h. Un rappel reçu à 13 h est ignoré. Une actualisation ou un report conserve l’échéance ; un report atteignant ou dépassant celle-ci est refusé. Retirer une notification ne supprime jamais l’événement.
 
-✔️ Flexibility for Your Productivity  
-➕ Calendar Widget supports exporting & importing events via .ics files  
-➕ Export settings to .txt files to import to another device  
-➕ Flexible event creation – times, duration, reminders, powerful repetition rules  
-➕ CalDAV support for syncing events via Google Calendar, Microsoft Outlook, Nextcloud, Exchange, etc
+L’état de chaque événement/occurrence/emplacement de rappel est enregistré dans SQLite. Android retire la notification avec `setTimeoutAfter(tempsRestant)` ; une alarme d’expiration complète ce mécanisme. Les suppressions manuelles sont persistées. Après redémarrage, seuls les rappels encore valides sont restaurés, silencieusement. Le son répétitif reste géré par Android et s’arrête avec la notification ; aucun service audio autonome n’est ajouté.
 
-✔️ Personalized Just for You  
-➕ Schedule planner - customize and change sound, looping, audio stream, vibrations  
-➕ Calendar widget - Colorful Calendars and customizable themes  
-➕ Open source tiny calendar, translated into 30+ languages  
-➕ Plan your day with others - ability to share events fast on social media, emails, etc  
-➕ Family Organizer - with hasslefree event duplication, organization, and time management
+Hypothèses : la durée est figée quand le rappel est enregistré ; changer le réglage global concerne les nouveaux rappels enregistrés. Une modification de l’horaire ou de la règle d’un événement invalide son ancienne programmation. Les échéances déjà enregistrées sont des instants UTC ; les futures occurrences locales suivent le moteur de récurrence et les changements de fuseau. Un refus de notifications est respecté ; les événements restent enregistrables. Sans autorisation d’alarmes précises, le déclenchement peut être retardé, sans prolonger la visibilité. Le réglage « Rappels précis » ouvre l’autorisation système à la demande.
 
-✔️ Organization and Time Management  
-➕ Day planner - the agenda planner will help you to organize your day  
-➕ Weekly planner - staying ahead of your busy weekly schedule has never been easier  
-➕ Itinerary manager - business calendar shared between teams at work  
-➕ Appointment scheduler - organize and maintain your agenda with ease  
-➕ Planning app - easy to use personal event, appointment reminder, and schedule planner  
-➕ Plan your day - manage your day with this android schedule planner, event & family organizer
+## Compilation et installation
 
-✔️ #1 Calendar App  
-➕ Import holidays, contact birthdays, and anniversaries easily  
-➕ Filter personal events quickly by event type  
-➕ Daily schedule and event location, shown on a map  
-➕ Quick business calendar, or personal digital agenda  
-➕ Quickly switch between daily, weekly, monthly, yearly & event views
+Prérequis : JDK 17, SDK Android 34 et licences SDK acceptées. Le wrapper utilise Gradle 8.2.1 / AGP 8.1.1. Définir `ANDROID_HOME` ou `sdk.dir` dans `local.properties`.
 
-DOWNLOAD SIMPLE CALENDAR PLANNER – OFFLINE SCHEDULE AND AGENDA PLANNER WITH NO ADS! PLAN YOUR 2023 TIMETABLE!
+```sh
+./gradlew testCoreDebugUnitTest assembleCoreDebug
+adb install -r app/build/outputs/apk/core/debug/reminder-core-debug.apk
+```
 
-<a href="https://f-droid.org/packages/com.simplemobiletools.calendar.pro">Get it on F-Droid</a>
+L’APK debug est signé automatiquement avec une clé de développement, sans clé privée de publication. Pour une version de production, renseigner `keystore.properties` à partir de l’exemple et lancer `assembleCoreRelease`. Ne pas publier la clé de développement.
 
-Support us:  
-IBAN: SK4083300000002000965231  
-Bitcoin: 19Hc8A7sWGud8sP19VXDC5a5j28UyJfpyJ  
-Ethereum: 0xB7a2DD6f2408Bce77334655CF5E7639aE31feb30  
-Litecoin: LYACbHTKaM9ZubKQGxJ4NRyVy1gHUuztRP  
-Bitcoin Cash: qz6dvmhq5vzkcsypxpp2mnur30muxdah4gvulx3y85  
-Tether: 0x250f9cC32863E59b87037a14955Ed64F879653F0  
-<a href="https://paypal.me/SimpleMobileTools?country.x=SK&locale.x=en_US">PayPal</a>  
-<a href="https://www.patreon.com/tiborkaputa">Patreon</a>
+La CI [Reminder Android](https://github.com/bnoirant/Reminder/actions/workflows/android.yml) teste, compile et conserve l’APK avec le rapport de tests. Voir [le bilan des vérifications](docs/VERIFICATION.md) et [la conception](docs/NOTIFICATIONS.md).
 
-<div style="display:flex;">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/1_en-US.jpeg" width="30%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/2_en-US.jpeg" width="30%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/4_en-US.jpeg" width="30%">
-</div>
+## Origine et licences
+
+Le dépôt contenait déjà l’application ; aucune réinitialisation n’a été faite. Base conservée : **`599985c678bd786e024dbd421cfe1708656eea45`**, issue de [SimpleMobileTools/Simple-Calendar](https://github.com/SimpleMobileTools/Simple-Calendar). Historique, [GPL-3.0](LICENSE), attributions et [README original](docs/UPSTREAM_README.md) conservés. Reminder est un dérivé indépendant.
+
+Simple-Commons reste épinglé à `b7dd6ad428`. Son ancienne dépendance JitPack `rtl-viewpager:940f12724f` n’est plus disponible ; ses deux fichiers Java inchangés sont inclus depuis le commit **`940f12724ff0fe624f12e8218b2b967891aa5396`** de [Duolingo/rtl-viewpager](https://github.com/duolingo/rtl-viewpager), avec leur [licence Apache-2.0](third_party/rtl-viewpager/LICENSE).

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">সাধারণ ক্যালেন্ডার</string>
-    <string name="app_launcher_name">ক্যালেন্ডার</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">দৃশ্য পরিবর্তন করুন</string>
     <string name="daily_view">প্রাত্যহিক ভিউ</string>
     <string name="weekly_view">সাপ্তাহিক ভিউ</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">আজকের দিনে যাও</string>
     <string name="go_to_date">তারিখে যাও</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">মাসিক ক্যালেন্ডার</string>
-    <string name="widget_list">ক্যালেন্ডারের ইভেন্ট তালিকা</string>
-    <string name="widget_todays_date">Calendar today\'s date</string>
+    <string name="widget_monthly">Reminder — মাসিক ক্যালেন্ডার</string>
+    <string name="widget_list">Reminder — ক্যালেন্ডারের ইভেন্ট তালিকা</string>
+    <string name="widget_todays_date">Reminder — Calendar today\'s date</string>
     <!-- Event -->
     <string name="event">ইভেন্ট</string>
     <string name="edit_event">ইভেন্ট পরিবর্তন</string>

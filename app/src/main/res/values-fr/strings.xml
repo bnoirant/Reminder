@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Agenda simple</string>
-    <string name="app_launcher_name">Agenda</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Changer de vue</string>
     <string name="daily_view">Vue quotidienne</string>
     <string name="weekly_view">Vue hebdomadaire</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Aller à aujourd\'hui</string>
     <string name="go_to_date">Aller à une date</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Agenda mensuel</string>
-    <string name="widget_list">Liste des évènements de l\'agenda</string>
-    <string name="widget_todays_date">Date du jour</string>
+    <string name="widget_monthly">Reminder — Agenda mensuel</string>
+    <string name="widget_list">Reminder — Liste des évènements de l\'agenda</string>
+    <string name="widget_todays_date">Reminder — Date du jour</string>
     <!-- Event -->
     <string name="event">Évènement</string>
     <string name="edit_event">Modifier l\'évènement</string>

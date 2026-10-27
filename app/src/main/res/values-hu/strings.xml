@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Egyszerű naptár</string>
-    <string name="app_launcher_name">Naptár</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Nézet megváltoztatása</string>
     <string name="daily_view">Napi nézet</string>
     <string name="weekly_view">Heti nézet</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Ugrás a mához</string>
     <string name="go_to_date">Ugrás a dátumhoz</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Havi naptár</string>
-    <string name="widget_list">Eseménynaptár</string>
-    <string name="widget_todays_date">Naptár mai napja</string>
+    <string name="widget_monthly">Reminder — Havi naptár</string>
+    <string name="widget_list">Reminder — Eseménynaptár</string>
+    <string name="widget_todays_date">Reminder — Naptár mai napja</string>
     <!-- Event -->
     <string name="event">Esemény</string>
     <string name="edit_event">Esemény szerkesztése</string>

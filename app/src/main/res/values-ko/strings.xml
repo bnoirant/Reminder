@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">심플 캘린더</string>
-    <string name="app_launcher_name">캘린더</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">보기 변경</string>
     <string name="daily_view">일간 보기</string>
     <string name="weekly_view">주간 보기</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">오늘로 이동</string>
     <string name="go_to_date">해당일로 이동</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">월별 달력</string>
-    <string name="widget_list">일정 목록 달력</string>
-    <string name="widget_todays_date">Calendar today\'s date</string>
+    <string name="widget_monthly">Reminder — 월별 달력</string>
+    <string name="widget_list">Reminder — 일정 목록 달력</string>
+    <string name="widget_todays_date">Reminder — Calendar today\'s date</string>
     <!-- Event -->
     <string name="event">일정</string>
     <string name="edit_event">일정 수정</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Jednoduchý kalendář</string>
-    <string name="app_launcher_name">Kalendář</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Změnit zobrazení</string>
     <string name="daily_view">Denní</string>
     <string name="weekly_view">Týdenní</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Přejít na dnešní datum</string>
     <string name="go_to_date">Přejít na datum</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Kalendář – měsíční</string>
-    <string name="widget_list">Kalendář – seznam událostí</string>
-    <string name="widget_todays_date">Kalendář – dnešní datum</string>
+    <string name="widget_monthly">Reminder — Kalendář – měsíční</string>
+    <string name="widget_list">Reminder — Kalendář – seznam událostí</string>
+    <string name="widget_todays_date">Reminder — Kalendář – dnešní datum</string>
     <!-- Event -->
     <string name="event">Událost</string>
     <string name="edit_event">Upravit událost</string>

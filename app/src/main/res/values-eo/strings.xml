@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simpla Kalendaro</string>
-    <string name="app_launcher_name">Kalendaro</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Ŝanĝi vidon</string>
     <string name="daily_view">Taga vido</string>
     <string name="weekly_view">Semajna vido</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Iri hodiaŭen</string>
     <string name="go_to_date">Iri al dato</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Calendar monthly</string>
-    <string name="widget_list">Calendar event list</string>
-    <string name="widget_todays_date">Calendar today\'s date</string>
+    <string name="widget_monthly">Reminder — Calendar monthly</string>
+    <string name="widget_list">Reminder — Calendar event list</string>
+    <string name="widget_todays_date">Reminder — Calendar today\'s date</string>
     <!-- Event -->
     <string name="event">Evento</string>
     <string name="edit_event">Modifi eventon</string>

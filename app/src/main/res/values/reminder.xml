@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_visibility">Notification visibility duration</string>
+    <string name="visibility_global">Use global setting</string>
+    <string name="visibility_hours">%1$s h</string>
+    <string name="visibility_custom">Custom duration</string>
+    <string name="visibility_minutes">Duration in minutes (decimals allowed)</string>
+    <string name="visibility_positive">Enter a strictly positive duration (at least 1 ms).</string>
+    <string name="snooze_exceeds_expiry">Snooze refused: it must end before the original expiry.</string>
+    <string name="precise_alarms">Precise reminders</string>
+    <string name="precise_alarms_granted">Allowed</string>
+    <string name="precise_alarms_denied">Not allowed — reminders may be delayed; tap to allow</string>
+</resources>

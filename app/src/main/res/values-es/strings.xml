@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Calendar</string>
-    <string name="app_launcher_name">Calendario</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Cambiar vista</string>
     <string name="daily_view">Vista diaria</string>
     <string name="weekly_view">Vista semanal</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Ir al día de hoy</string>
     <string name="go_to_date">Ir a la fecha</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Calendario mensual</string>
-    <string name="widget_list">Lista de eventos del calendario</string>
-    <string name="widget_todays_date">Calendario de hoy</string>
+    <string name="widget_monthly">Reminder — Calendario mensual</string>
+    <string name="widget_list">Reminder — Lista de eventos del calendario</string>
+    <string name="widget_todays_date">Reminder — Calendario de hoy</string>
     <!-- Event -->
     <string name="event">Evento</string>
     <string name="edit_event">Editar evento</string>

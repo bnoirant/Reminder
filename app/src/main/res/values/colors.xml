@@ -4,4 +4,5 @@
     <color name="default_birthdays_color">@color/md_blue_800</color>
     <color name="default_holidays_color">@color/md_green_700</color>
     <color name="default_anniversaries_color">@color/md_red_400_dark</color>
+    <color name="reminder_launcher_background">#1565C0</color>
 </resources>

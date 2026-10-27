@@ -14,3 +14,5 @@ dependencyResolutionManagement {
     }
 }
 include(":app")
+
+include(":rtl-viewpager")

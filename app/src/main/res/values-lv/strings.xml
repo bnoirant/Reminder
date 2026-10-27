@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Vienkāršais kalendārs</string>
-    <string name="app_launcher_name">Kalendārs</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Mainīt skatu</string>
     <string name="daily_view">Dienas skats</string>
     <string name="weekly_view">Nedēļas skats</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Iet uz šodienu</string>
     <string name="go_to_date">Iet uz datumu</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Mēneša kalendārs</string>
-    <string name="widget_list">Kalendāra notikumu saraksts</string>
-    <string name="widget_todays_date">Kalendārs šodienai</string>
+    <string name="widget_monthly">Reminder — Mēneša kalendārs</string>
+    <string name="widget_list">Reminder — Kalendāra notikumu saraksts</string>
+    <string name="widget_todays_date">Reminder — Kalendārs šodienai</string>
     <!-- Event -->
     <string name="event">Notikums</string>
     <string name="edit_event">Rediģēt notikumu</string>

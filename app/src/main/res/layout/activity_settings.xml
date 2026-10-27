@@ -238,6 +238,24 @@
                 android:layout_height="wrap_content"
                 android:text="@string/reminders" />
 
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/settings_notification_visibility"
+                style="@style/SettingsTextLabelStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="64dp"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground" />
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/settings_precise_alarms"
+                style="@style/SettingsTextLabelStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="64dp"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground" />
+
             <RelativeLayout
                 android:id="@+id/settings_customize_notifications_holder"
                 style="@style/SettingsHolderTextViewOneLinerStyle"

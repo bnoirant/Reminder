@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Yksinkertainen kalenteri</string>
-    <string name="app_launcher_name">Kalenteri</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Vaihda näkymää</string>
     <string name="daily_view">Päivänäkymä</string>
     <string name="weekly_view">Viikkonäkymä</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Mene tähän päivään</string>
     <string name="go_to_date">Mene päivään</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Kalenteri kuukausittain</string>
-    <string name="widget_list">Kalenteri tapahtumaluettelo</string>
-    <string name="widget_todays_date">Kalenteri tämän päivän päivämäärä</string>
+    <string name="widget_monthly">Reminder — Kalenteri kuukausittain</string>
+    <string name="widget_list">Reminder — Kalenteri tapahtumaluettelo</string>
+    <string name="widget_todays_date">Reminder — Kalenteri tämän päivän päivämäärä</string>
     <!-- Event -->
     <string name="event">Tapahtuma</string>
     <string name="edit_event">Muokkaa Tapahtumaa</string>

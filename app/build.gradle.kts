@@ -10,7 +10,7 @@ plugins {
 }
 
 base {
-    archivesName.set("calendar")
+    archivesName.set("reminder")
 }
 
 val keystorePropertiesFile: File = rootProject.file("keystore.properties")
@@ -28,6 +28,7 @@ android {
         targetSdk = project.libs.versions.app.build.targetSDK.get().toInt()
         versionCode = project.libs.versions.app.version.versionCode.get().toInt()
         versionName = project.libs.versions.app.version.versionName.get()
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
         vectorDrawables.useSupportLibrary = true
         ksp {
@@ -51,9 +52,11 @@ android {
         buildConfig = true
     }
 
+    testOptions.unitTests.isIncludeAndroidResources = true
+
     buildTypes {
         debug {
-            applicationIdSuffix = ".debug"
+            // Test APK uses the same identity as Reminder releases.
         }
         release {
             isMinifyEnabled = true
@@ -76,6 +79,7 @@ android {
 
     sourceSets {
         getByName("main").java.srcDirs("src/main/kotlin")
+        getByName("test").resources.srcDir("schemas")
     }
 
     compileOptions {
@@ -97,7 +101,16 @@ android {
 }
 
 dependencies {
-    implementation(libs.simple.mobile.tools.commons)
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.robolectric:robolectric:4.11.1")
+    testImplementation("androidx.test:core:1.5.0")
+    androidTestImplementation("androidx.test:runner:1.5.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.room:room-testing:2.5.2")
+    implementation(libs.simple.mobile.tools.commons) {
+        exclude(group = "com.github.duolingo", module = "rtl-viewpager")
+    }
+    implementation(project(":rtl-viewpager"))
     implementation(libs.androidx.multidex)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.swiperefreshlayout)

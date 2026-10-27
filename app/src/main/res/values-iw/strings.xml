@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">יומן פשוט</string>
-    <string name="app_launcher_name">יומן</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">שינוי תצוגה</string>
     <string name="daily_view">תצוגה יומית</string>
     <string name="weekly_view">תצוגה שבועית</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">עבור להיום</string>
     <string name="go_to_date">עבור לתאריך</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">יומן חודשי</string>
-    <string name="widget_list">רשימת אירועי יומן</string>
-    <string name="widget_todays_date">לוח שנה התאריך של היום</string>
+    <string name="widget_monthly">Reminder — יומן חודשי</string>
+    <string name="widget_list">Reminder — רשימת אירועי יומן</string>
+    <string name="widget_todays_date">Reminder — לוח שנה התאריך של היום</string>
     <!-- Event -->
     <string name="event">אירוע</string>
     <string name="edit_event">ערוך אירוע</string>

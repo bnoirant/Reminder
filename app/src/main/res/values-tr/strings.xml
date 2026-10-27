@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Basit Takvim</string>
-    <string name="app_launcher_name">Takvim</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">Görünümü değiştir</string>
     <string name="daily_view">Günlük görünüm</string>
     <string name="weekly_view">Haftalık görünüm</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">Bugüne git</string>
     <string name="go_to_date">Tarihe git</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">Aylık takvim</string>
-    <string name="widget_list">Takvim etkinlik listesi</string>
-    <string name="widget_todays_date">Takvim bugünün tarihi</string>
+    <string name="widget_monthly">Reminder — Aylık takvim</string>
+    <string name="widget_list">Reminder — Takvim etkinlik listesi</string>
+    <string name="widget_todays_date">Reminder — Takvim bugünün tarihi</string>
     <!-- Event -->
     <string name="event">Durum</string>
     <string name="edit_event">Etkinliği Düzenle</string>

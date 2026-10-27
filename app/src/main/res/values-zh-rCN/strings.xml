@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">简单日历</string>
-    <string name="app_launcher_name">日历</string>
+    <string name="app_name">Reminder</string>
+    <string name="app_launcher_name">Reminder</string>
     <string name="change_view">改变视图</string>
     <string name="daily_view">日历视图</string>
     <string name="weekly_view">周历视图</string>
@@ -13,9 +13,9 @@
     <string name="go_to_today">前往今天</string>
     <string name="go_to_date">前往日期</string>
     <!-- Widget titles -->
-    <string name="widget_monthly">日历 月历视图</string>
-    <string name="widget_list">日历 活动列表</string>
-    <string name="widget_todays_date">日历 今天的日期</string>
+    <string name="widget_monthly">Reminder — 日历 月历视图</string>
+    <string name="widget_list">Reminder — 日历 活动列表</string>
+    <string name="widget_todays_date">Reminder — 日历 今天的日期</string>
     <!-- Event -->
     <string name="event">活动</string>
     <string name="edit_event">编辑活动</string>
