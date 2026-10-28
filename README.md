@@ -36,3 +36,11 @@ La CI [Reminder Android](https://github.com/bnoirant/Reminder/actions/workflows/
 Le dépôt contenait déjà l’application ; aucune réinitialisation n’a été faite. Base conservée : **`599985c678bd786e024dbd421cfe1708656eea45`**, issue de [SimpleMobileTools/Simple-Calendar](https://github.com/SimpleMobileTools/Simple-Calendar). Historique, [GPL-3.0](LICENSE), attributions et [README original](docs/UPSTREAM_README.md) conservés. Reminder est un dérivé indépendant.
 
 Simple-Commons reste épinglé à `b7dd6ad428`. Son ancienne dépendance JitPack `rtl-viewpager:940f12724f` n’est plus disponible ; ses deux fichiers Java inchangés sont inclus depuis le commit **`940f12724ff0fe624f12e8218b2b967891aa5396`** de [Duolingo/rtl-viewpager](https://github.com/duolingo/rtl-viewpager), avec leur [licence Apache-2.0](third_party/rtl-viewpager/LICENSE).
+
+### Version 1.0.1 : widgets compacts
+
+Les widgets mensuel et liste peuvent être ajoutés ou redimensionnés en **4×2**. Sous 200 dp de hauteur, le mois montre les six semaines avec un point pour les événements ; toucher un jour ouvre son agenda. Agrandir le widget rétablit les titres. Le lanceur décide des dimensions exactes des cellules. Après mise à jour, un widget existant peut nécessiter d'être retiré puis ajouté à nouveau.
+
+Simple-Commons est désormais compilé depuis les sources GPL conservées dans `simple-commons/` ; voir `simple-commons/REMINDER_PATCHES.md`. Les restrictions du préfixe Simple Mobile Tools qui provoquaient le faux avertissement ont été retirées.
+
+Les APK de test sont signés avec une clé de développement privée hors du dépôt. La clé éphémère de la version 1.0.0 n'est plus disponible : si Android refuse une mise à jour pour signature différente, **exportez événements, tâches et réglages avant toute désinstallation**, puis réinstallez et importez vos données. Pour une distribution durable, utilisez votre propre clé de signature conservée en sécurité.

@@ -107,9 +107,7 @@ dependencies {
     androidTestImplementation("androidx.test:runner:1.5.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.room:room-testing:2.5.2")
-    implementation(libs.simple.mobile.tools.commons) {
-        exclude(group = "com.github.duolingo", module = "rtl-viewpager")
-    }
+    implementation(project(":simple-commons"))
     implementation(project(":rtl-viewpager"))
     implementation(libs.androidx.multidex)
     implementation(libs.androidx.constraintlayout)

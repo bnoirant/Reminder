@@ -8,6 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Paint
+import android.os.Bundle
 import android.view.View
 import android.widget.RemoteViews
 import io.reminder.calendar.R
@@ -32,6 +33,10 @@ class MyWidgetMonthlyProvider : AppWidgetProvider() {
     }
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
+        performUpdate(context)
+    }
+
+    override fun onAppWidgetOptionsChanged(context: Context, manager: AppWidgetManager, id: Int, options: Bundle) {
         performUpdate(context)
     }
 
@@ -92,12 +97,12 @@ class MyWidgetMonthlyProvider : AppWidgetProvider() {
         MonthlyCalendarImpl(monthlyCalendar, context).getMonth(targetDate!!)
     }
 
-    private fun updateDays(context: Context, views: RemoteViews, days: List<DayMonthly>) {
+    private fun updateDays(context: Context, views: RemoteViews, days: List<DayMonthly>, compact: Boolean) {
         val displayWeekNumbers = context.config.showWeekNumbers
         val textColor = context.config.widgetTextColor
         val dimPastEvents = context.config.dimPastEvents
         val dimCompletedTasks = context.config.dimCompletedTasks
-        val smallerFontSize = context.getWidgetFontSize() - 3f
+        val smallerFontSize = if (compact) 9f else context.getWidgetFontSize() - 3f
         val res = context.resources
         val len = days.size
         val packageName = context.packageName
@@ -130,8 +135,11 @@ class MyWidgetMonthlyProvider : AppWidgetProvider() {
             val currTextColor = if (day.isThisMonth) dayTextColor else weakTextColor
             val id = res.getIdentifier("day_$i", "id", packageName)
             views.removeAllViews(id)
-            addDayNumber(context, views, day, currTextColor, id)
+            addDayNumber(context, views, day, currTextColor, id, compact)
             setupDayOpenIntent(context, views, id, day.code)
+
+            views.setContentDescription(id, day.code + ": " + day.dayEvents.joinToString { it.title })
+            if (compact) continue
 
             day.dayEvents = day.dayEvents.asSequence().sortedWith(compareBy({ it.flags and FLAG_ALL_DAY == 0 }, { it.startTS }, { it.title }))
                 .toMutableList() as ArrayList<Event>
@@ -163,10 +171,10 @@ class MyWidgetMonthlyProvider : AppWidgetProvider() {
         }
     }
 
-    private fun addDayNumber(context: Context, views: RemoteViews, day: DayMonthly, textColor: Int, id: Int) {
-        val newRemoteView = RemoteViews(context.packageName, R.layout.day_monthly_number_view).apply {
-            setText(R.id.day_monthly_number_id, day.value.toString())
-            setTextSize(R.id.day_monthly_number_id, context.getWidgetFontSize() - 3f)
+    private fun addDayNumber(context: Context, views: RemoteViews, day: DayMonthly, textColor: Int, id: Int, compact: Boolean) {
+        val newRemoteView = RemoteViews(context.packageName, if (compact) R.layout.day_monthly_number_view_compact else R.layout.day_monthly_number_view).apply {
+            setText(R.id.day_monthly_number_id, day.value.toString() + if (compact && day.dayEvents.isNotEmpty()) " ·" else "")
+            setTextSize(R.id.day_monthly_number_id, if (compact) 10f else context.getWidgetFontSize() - 3f)
 
             if (day.isToday) {
                 setTextColor(R.id.day_monthly_number_id, textColor.getContrastColor())
@@ -180,21 +188,16 @@ class MyWidgetMonthlyProvider : AppWidgetProvider() {
         views.addView(id, newRemoteView)
     }
 
-    private val monthlyCalendar = object : MonthlyCalendar {
-        override fun updateMonthlyCalendar(context: Context, month: String, days: ArrayList<DayMonthly>, checkedEvents: Boolean, currTargetDate: DateTime) {
-            val largerFontSize = context.getWidgetFontSize() + 3f
-            val textColor = context.config.widgetTextColor
-            val resources = context.resources
-
-            val appWidgetManager = AppWidgetManager.getInstance(context) ?: return
-            appWidgetManager.getAppWidgetIds(getComponentName(context)).forEach {
+    internal fun createMonthViews(context: Context, month: String, days: List<DayMonthly>, currTargetDate: DateTime, compact: Boolean): RemoteViews {
+        val textColor = context.config.widgetTextColor
+        val resources = context.resources
                 val views = RemoteViews(context.packageName, R.layout.fragment_month_widget)
                 views.setText(R.id.top_value, month)
 
                 views.applyColorFilter(R.id.widget_month_background, context.config.widgetBgColor)
 
                 views.setTextColor(R.id.top_value, textColor)
-                views.setTextSize(R.id.top_value, largerFontSize)
+                views.setTextSize(R.id.top_value, if (compact) 12f else context.getWidgetFontSize() + 3f)
 
                 var bmp = resources.getColoredBitmap(com.simplemobiletools.commons.R.drawable.ic_chevron_left_vector, textColor)
                 views.setImageViewBitmap(R.id.top_left_arrow, bmp)
@@ -211,8 +214,8 @@ class MyWidgetMonthlyProvider : AppWidgetProvider() {
                 val shouldGoToTodayBeVisible = currTargetDate.withTime(0, 0, 0, 0) != DateTime.now().withDayOfMonth(1).withTime(0, 0, 0, 0)
                 views.setVisibleIf(R.id.top_go_to_today, shouldGoToTodayBeVisible)
 
-                updateDayLabels(context, views, resources, textColor)
-                updateDays(context, views, days)
+                updateDayLabels(context, views, resources, textColor, compact)
+                updateDays(context, views, days, compact)
 
                 setupIntent(context, views, PREV, R.id.top_left_arrow)
                 setupIntent(context, views, NEXT, R.id.top_right_arrow)
@@ -222,6 +225,31 @@ class MyWidgetMonthlyProvider : AppWidgetProvider() {
                 val monthCode = days.firstOrNull { it.code.substring(6) == "01" }?.code ?: Formatter.getTodayCode()
                 setupAppOpenIntent(context, views, R.id.top_value, monthCode)
 
+                if (compact) {
+                    val padding = (3 * resources.displayMetrics.density).toInt()
+                    views.setViewPadding(R.id.calendar_wrapper, padding, padding, padding, padding)
+                    views.setViewPadding(R.id.top_value, 0, 0, 0, 0)
+                    views.setViewPadding(R.id.first_row_widget, 0, 0, 0, 0)
+                }
+                return views
+    }
+
+    private val monthlyCalendar = object : MonthlyCalendar {
+        override fun updateMonthlyCalendar(context: Context, month: String, days: ArrayList<DayMonthly>, checkedEvents: Boolean, currTargetDate: DateTime) {
+            val largerFontSize = context.getWidgetFontSize() + 3f
+            val textColor = context.config.widgetTextColor
+            val resources = context.resources
+
+            val appWidgetManager = AppWidgetManager.getInstance(context) ?: return
+            appWidgetManager.getAppWidgetIds(getComponentName(context)).forEach {
+                val options = appWidgetManager.getAppWidgetOptions(it)
+                val minHeight = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT, 250)
+                val maxHeight = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT, minHeight)
+                val portrait = createMonthViews(context, month, days, currTargetDate, maxHeight < 200)
+                val views = if ((minHeight < 200) != (maxHeight < 200)) {
+                    RemoteViews(createMonthViews(context, month, days, currTargetDate, minHeight < 200), portrait)
+                } else portrait
+
                 try {
                     appWidgetManager.updateAppWidget(it, views)
                 } catch (ignored: RuntimeException) {
@@ -230,10 +258,10 @@ class MyWidgetMonthlyProvider : AppWidgetProvider() {
         }
     }
 
-    private fun updateDayLabels(context: Context, views: RemoteViews, resources: Resources, textColor: Int) {
+    private fun updateDayLabels(context: Context, views: RemoteViews, resources: Resources, textColor: Int, compact: Boolean) {
         val config = context.config
         val firstDayOfWeek = config.firstDayOfWeek
-        val smallerFontSize = context.getWidgetFontSize()
+        val smallerFontSize = if (compact) 8f else context.getWidgetFontSize()
         val packageName = context.packageName
         val letters = context.resources.getStringArray(com.simplemobiletools.commons.R.array.week_day_letters)
 

@@ -96,7 +96,7 @@
         <LinearLayout
             android:id="@+id/month_line_holder_1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -169,7 +169,7 @@
         <LinearLayout
             android:id="@+id/month_line_holder_2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -242,7 +242,7 @@
         <LinearLayout
             android:id="@+id/month_line_holder_3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -315,7 +315,7 @@
         <LinearLayout
             android:id="@+id/month_line_holder_4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -388,7 +388,7 @@
         <LinearLayout
             android:id="@+id/month_line_holder_5"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -461,7 +461,7 @@
         <LinearLayout
             android:id="@+id/month_line_holder_6"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 

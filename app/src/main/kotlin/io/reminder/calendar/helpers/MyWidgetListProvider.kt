@@ -7,6 +7,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Bundle
 import android.widget.RemoteViews
 import io.reminder.calendar.R
 import io.reminder.calendar.activities.SplashActivity
@@ -32,6 +33,10 @@ class MyWidgetListProvider : AppWidgetProvider() {
         performUpdate(context)
     }
 
+    override fun onAppWidgetOptionsChanged(context: Context, manager: AppWidgetManager, id: Int, options: Bundle) {
+        performUpdate(context)
+    }
+
     private fun performUpdate(context: Context) {
         val fontSize = context.getWidgetFontSize()
         val textColor = context.config.widgetTextColor
@@ -39,14 +44,16 @@ class MyWidgetListProvider : AppWidgetProvider() {
         val appWidgetManager = AppWidgetManager.getInstance(context) ?: return
         ensureBackgroundThread {
             appWidgetManager.getAppWidgetIds(getComponentName(context)).forEach {
+                val compact = appWidgetManager.getAppWidgetOptions(it).getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT, 250) < 200
+                val headerSize = if (compact) minOf(fontSize, 14f) else fontSize
                 val widget = context.widgetsDB.getWidgetWithWidgetId(it)
                 val views = RemoteViews(context.packageName, R.layout.widget_event_list).apply {
                     applyColorFilter(R.id.widget_event_list_background, context.config.widgetBgColor)
                     setTextColor(R.id.widget_event_list_empty, textColor)
-                    setTextSize(R.id.widget_event_list_empty, fontSize)
+                    setTextSize(R.id.widget_event_list_empty, headerSize)
 
                     setTextColor(R.id.widget_event_list_today, textColor)
-                    setTextSize(R.id.widget_event_list_today, fontSize)
+                    setTextSize(R.id.widget_event_list_today, headerSize)
                 }
 
                 views.setImageViewBitmap(

@@ -6,6 +6,9 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
+    versionCatalogs {
+        create("commonsLibs") { from(files("simple-commons/libs.versions.toml")) }
+    }
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
@@ -16,3 +19,5 @@ dependencyResolutionManagement {
 include(":app")
 
 include(":rtl-viewpager")
+
+include(":simple-commons")
