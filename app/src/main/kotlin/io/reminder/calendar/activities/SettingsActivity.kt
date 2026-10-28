@@ -887,7 +887,7 @@ class SettingsActivity : SimpleActivity() {
 
     private fun setupEnableAutomaticBackups() = binding.apply {
         settingsBackupsLabel.beVisibleIf(isRPlus())
-        settingsBackupsDivider.beVisibleIf(isRPlus())
+        settingsBackupsDivider.root.beVisibleIf(isRPlus())
         settingsEnableAutomaticBackupsHolder.beVisibleIf(isRPlus())
         settingsEnableAutomaticBackups.isChecked = config.autoBackup
         settingsEnableAutomaticBackupsHolder.setOnClickListener {

@@ -266,12 +266,12 @@ class WeekFragmentsHolder : MyFragmentHolder(), WeekFragmentListener {
     }
 
     override fun getFullFragmentHeight() =
-        binding.weekViewHolder.height - binding.weekViewSeekbar.height - binding.weekViewDaysCountDivider.height
+        binding.weekViewHolder.height - binding.weekViewSeekbar.height - binding.weekViewDaysCountDivider.root.height
 
     override fun printView() {
         val lightTextColor = resources.getColor(com.simplemobiletools.commons.R.color.theme_light_text_color)
         binding.apply {
-            weekViewDaysCountDivider.beGone()
+            weekViewDaysCountDivider.root.beGone()
             weekViewSeekbar.beGone()
             weekViewDaysCount.beGone()
             addHours(lightTextColor)
@@ -284,7 +284,7 @@ class WeekFragmentsHolder : MyFragmentHolder(), WeekFragmentListener {
                 requireContext().printBitmap(binding.weekViewHolder.getViewBitmap())
 
                 Handler().postDelayed({
-                    weekViewDaysCountDivider.beVisible()
+                    weekViewDaysCountDivider.root.beVisible()
                     weekViewSeekbar.beVisible()
                     weekViewDaysCount.beVisible()
                     weekViewWeekNumber.setTextColor(requireContext().getProperTextColor())
