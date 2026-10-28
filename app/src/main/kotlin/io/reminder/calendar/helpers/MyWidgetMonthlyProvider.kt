@@ -245,9 +245,9 @@ class MyWidgetMonthlyProvider : AppWidgetProvider() {
                 val options = appWidgetManager.getAppWidgetOptions(it)
                 val minHeight = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT, 250)
                 val maxHeight = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT, minHeight)
-                val portrait = createMonthViews(context, month, days, currTargetDate, maxHeight < 200)
-                val views = if ((minHeight < 200) != (maxHeight < 200)) {
-                    RemoteViews(createMonthViews(context, month, days, currTargetDate, minHeight < 200), portrait)
+                val portrait = createMonthViews(context, month, days, currTargetDate, maxHeight < 280)
+                val views = if ((minHeight < 280) != (maxHeight < 280)) {
+                    RemoteViews(createMonthViews(context, month, days, currTargetDate, minHeight < 280), portrait)
                 } else portrait
 
                 try {

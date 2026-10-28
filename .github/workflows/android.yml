@@ -22,10 +22,18 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
       - name: Test and build installable debug APK
         run: ./gradlew testCoreDebugUnitTest assembleCoreDebug --no-daemon
+      - name: Verify APK identity and signature
+        run: |
+          for apk in app/build/outputs/apk/core/debug/*.apk; do
+            "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging "$apk" | head -5
+            "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --print-certs "$apk"
+            sha256sum "$apk"
+          done
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: reminder-debug-and-tests
           path: |
             app/build/outputs/apk/core/debug/*.apk
-            app/build/reports/tests/testCoreDebugUnitTest/
+            app/build/reports/tests/testCoreDebugUnitTest
+            app/build/test-results/testCoreDebugUnitTest/*.xml/

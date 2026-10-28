@@ -44,7 +44,7 @@ class MyWidgetListProvider : AppWidgetProvider() {
         val appWidgetManager = AppWidgetManager.getInstance(context) ?: return
         ensureBackgroundThread {
             appWidgetManager.getAppWidgetIds(getComponentName(context)).forEach {
-                val compact = appWidgetManager.getAppWidgetOptions(it).getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT, 250) < 200
+                val compact = appWidgetManager.getAppWidgetOptions(it).getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT, 250) < 280
                 val headerSize = if (compact) minOf(fontSize, 14f) else fontSize
                 val widget = context.widgetsDB.getWidgetWithWidgetId(it)
                 val views = RemoteViews(context.packageName, R.layout.widget_event_list).apply {

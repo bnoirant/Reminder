@@ -39,7 +39,7 @@ Simple-Commons reste épinglé à `b7dd6ad428`. Son ancienne dépendance JitPack
 
 ### Version 1.0.1 : widgets compacts
 
-Les widgets mensuel et liste peuvent être ajoutés ou redimensionnés en **4×2**. Sous 200 dp de hauteur, le mois montre les six semaines avec un point pour les événements ; toucher un jour ouvre son agenda. Agrandir le widget rétablit les titres. Le lanceur décide des dimensions exactes des cellules. Après mise à jour, un widget existant peut nécessiter d'être retiré puis ajouté à nouveau.
+Les widgets mensuel et liste peuvent être ajoutés ou redimensionnés en **4×2**. Sous 280 dp de hauteur, le mois montre les six semaines avec un point pour les événements ; toucher un jour ouvre son agenda. Agrandir le widget rétablit les titres. Le lanceur décide des dimensions exactes des cellules. Après mise à jour, un widget existant peut nécessiter d'être retiré puis ajouté à nouveau.
 
 Simple-Commons est désormais compilé depuis les sources GPL conservées dans `simple-commons/` ; voir `simple-commons/REMINDER_PATCHES.md`. Les restrictions du préfixe Simple Mobile Tools qui provoquaient le faux avertissement ont été retirées.
 
