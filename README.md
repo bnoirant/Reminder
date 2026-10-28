@@ -29,7 +29,7 @@ adb install -r app/build/outputs/apk/core/debug/reminder-core-debug.apk
 
 L’APK debug est signé automatiquement avec une clé de développement, sans clé privée de publication. Pour une version de production, renseigner `keystore.properties` à partir de l’exemple et lancer `assembleCoreRelease`. Ne pas publier la clé de développement.
 
-La CI [Reminder Android](https://github.com/bnoirant/Reminder/actions/workflows/android.yml) teste, compile et conserve l’APK avec le rapport de tests. Voir [le bilan des vérifications](docs/VERIFICATION.md) et [la conception](docs/NOTIFICATIONS.md).
+La CI [Reminder Android](https://github.com/bnoirant/Reminder/actions/workflows/android.yml) teste, compile et conserve l’APK avec le rapport de tests. Voir [le bilan 1.0.1 des vérifications](docs/VERIFICATION_1.0.1.md) ([bilan 1.0.0](docs/VERIFICATION.md)) et [la conception](docs/NOTIFICATIONS.md).
 
 ## Origine et licences
 

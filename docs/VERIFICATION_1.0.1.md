@@ -5,6 +5,10 @@
 - Référence officielle consultée : https://developer.android.com/develop/ui/views/appwidgets/layouts (targetCellHeight à partir d'Android 12, minHeight pour les versions précédentes, options de taille et orientations).
 - Tests ajoutés : rendu mensuel à 250×110dp, six semaines, clics, indicateur et accessibilité ; retour des titres en mode agrandi ; métadonnées des deux widgets ; absence d'avertissement aux lancements 0/100 et personnalisation après 100 ; identité Reminder.
 - Commande : `./gradlew testCoreDebugUnitTest assembleCoreDebug --no-daemon` (JDK17, SDK34).
-- Résultats de compilation et tests : à compléter après exécution.
+- Résultat exécuté le 28 octobre 2026 : **32 tests, 0 échec, 0 erreur, 0 ignoré**. 25 tests du moteur/échéances/migration conservés, 3 tests d'identité Reminder et 4 tests de widgets. Les mesures des widgets utilisent le rendu Android natif de Robolectric (polices réelles), à 250×110dp et également en haute densité xxhdpi.
+- CI réussie : https://github.com/bnoirant/Reminder/actions/runs/40698550729 ; sources de l'APK : commit `70923b41eeb2eaed011fcb24bb63eabea78c4b18`.
+- `testCoreDebugUnitTest assembleCoreDebug --no-daemon` : BUILD SUCCESSFUL. `aapt dump badging` : applicationId `io.reminder.calendar`, version 1.0.1 (242), minSdk 26, targetSdk 34. Signature APK vérifiée avec `apksigner verify --print-certs`.
+- APK livré : `Reminder-1.0.1-test.apk`, 31 489 137 octets. SHA-256 : `ffd50458851a71796bf1ff7b60dd91d32c0652d10ee2f59608b1de1c86c5ace3`. Copie téléchargée comparée au SHA-256 de la CI ; absence de la chaîne « fake version of the app » vérifiée dans tous les fichiers DEX. Rapports XML relus : comptes et absence d'échecs confirmés.
+- Certificat de test SHA-256 : `7bbf1e3ca870a3e0084bc0384bc6f33c2c2641d9ff7690f943456ccbae777162`. La clé privée de test n'est pas publiée : le contrôle automatique a refusé son envoi dans le dépôt public pour éviter son exposition. L'APK signé est livré sans clé privée.
 - Pas de téléphone/lanceur réel disponible : redimensionnement tactile et affichage sur écran d'accueil non exécutés. Aucun test physique de veille/verrouillage/redémarrage exécuté dans cette correction.
 - Signature : clé privée non publiée. La clé de test 1.0.0 n'est plus disponible ; exporter les données avant toute réinstallation nécessitée par une signature différente.
