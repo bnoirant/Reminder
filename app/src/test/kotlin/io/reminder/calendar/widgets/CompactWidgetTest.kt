@@ -18,9 +18,11 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
+import org.robolectric.annotation.GraphicsMode
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [28], application = Application::class)
+@GraphicsMode(GraphicsMode.Mode.NATIVE)
 class CompactWidgetTest {
     private fun render(compact: Boolean): View {
         val context = ContextThemeWrapper(ApplicationProvider.getApplicationContext<Context>(), R.style.AppTheme)
@@ -46,12 +48,20 @@ class CompactWidgetTest {
             assertEquals(1, cell.childCount)
             assertTrue("day $index has height", cell.height > 0)
             val number = cell.findViewById<TextView>(R.id.day_monthly_number_id)
-            assertTrue("day $index fits", number.lineHeight <= cell.height)
+            assertTrue("day $index fits: line=${number.lineHeight}, cell=${cell.height}, header=${root.findViewById<View>(R.id.top_value).height}, weekdays=${root.findViewById<View>(R.id.first_row_widget).height}", number.lineHeight <= cell.height)
             assertTrue(cell.hasOnClickListeners())
         }
         val first = root.findViewById<LinearLayout>(R.id.day_0)
         assertTrue(first.findViewById<TextView>(R.id.day_monthly_number_id).text.contains("·"))
         assertTrue(first.contentDescription.contains("Test event"))
+    }
+
+    @Test @Config(qualifiers = "xxhdpi") fun compactTextKeepsItsSizeOnDenseScreens() {
+        val root = render(true)
+        val cell = root.findViewById<LinearLayout>(R.id.day_0)
+        val number = cell.findViewById<TextView>(R.id.day_monthly_number_id)
+        assertEquals(10f * root.resources.displayMetrics.scaledDensity, number.textSize, 0.1f)
+        assertTrue("dense display line=${number.lineHeight}, cell=${cell.height}", number.lineHeight <= cell.height)
     }
 
     @Test fun expandedMonthRestoresEventTitles() {

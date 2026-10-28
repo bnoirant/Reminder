@@ -36,4 +36,4 @@ jobs:
           path: |
             app/build/outputs/apk/core/debug/*.apk
             app/build/reports/tests/testCoreDebugUnitTest
-            app/build/test-results/testCoreDebugUnitTest/*.xml/
+            app/build/test-results/testCoreDebugUnitTest/*.xml
